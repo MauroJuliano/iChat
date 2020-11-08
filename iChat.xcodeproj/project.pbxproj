@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0E24602558664700EE12F5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E245F2558664700EE12F5 /* Home.storyboard */; };
+		4C0E24652558665C00EE12F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E24642558665C00EE12F5 /* HomeViewController.swift */; };
+		4C0E24702558677900EE12F5 /* ChatTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E246F2558677900EE12F5 /* ChatTableCell.swift */; };
+		4C0E247925586C8A00EE12F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E247825586C8A00EE12F5 /* User.swift */; };
+		4C0E247F2558716A00EE12F5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E247E2558716A00EE12F5 /* TabBarController.swift */; };
+		4C0E2487255871C100EE12F5 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E2486255871C100EE12F5 /* TabBar.storyboard */; };
+		4C0E248D255873E700EE12F5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E248C255873E700EE12F5 /* SettingsViewController.swift */; };
+		4C0E2495255873F200EE12F5 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E2494255873F100EE12F5 /* Settings.storyboard */; };
+		4C0E249A2558763E00EE12F5 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E24992558763E00EE12F5 /* SettingsTableViewCell.swift */; };
 		4C1B42B125584D6A006F2482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B42B025584D6A006F2482 /* AppDelegate.swift */; };
 		4C1B42B325584D6A006F2482 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B42B225584D6A006F2482 /* SceneDelegate.swift */; };
 		4C1B42B525584D6A006F2482 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B42B425584D6A006F2482 /* ViewController.swift */; };
@@ -16,6 +25,7 @@
 		4C1B42C825584D6B006F2482 /* iChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B42C725584D6B006F2482 /* iChatTests.swift */; };
 		4C1B42D325584D6B006F2482 /* iChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B42D225584D6B006F2482 /* iChatUITests.swift */; };
 		4C1B42E425584E07006F2482 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B42E325584E07006F2482 /* RoundedView.swift */; };
+		4C1B42E92558632F006F2482 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B42E82558632F006F2482 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +46,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0E245F2558664700EE12F5 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		4C0E24642558665C00EE12F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4C0E246F2558677900EE12F5 /* ChatTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableCell.swift; sourceTree = "<group>"; };
+		4C0E247825586C8A00EE12F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4C0E247E2558716A00EE12F5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4C0E2486255871C100EE12F5 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		4C0E248C255873E700EE12F5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4C0E2494255873F100EE12F5 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		4C0E24992558763E00EE12F5 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		4C1B42AD25584D6A006F2482 /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1B42B025584D6A006F2482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C1B42B225584D6A006F2482 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +70,7 @@
 		4C1B42D225584D6B006F2482 /* iChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChatUITests.swift; sourceTree = "<group>"; };
 		4C1B42D425584D6B006F2482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C1B42E325584E07006F2482 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		4C1B42E82558632F006F2482 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +98,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C0E24552558660800EE12F5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4C1B42B625584D6A006F2482 /* Main.storyboard */,
+				4C1B42B425584D6A006F2482 /* ViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4C0E24592558661400EE12F5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4C1B42E325584E07006F2482 /* RoundedView.swift */,
+				4C1B42E82558632F006F2482 /* RoundedButton.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4C0E245E2558662D00EE12F5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4C0E245F2558664700EE12F5 /* Home.storyboard */,
+				4C0E24642558665C00EE12F5 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4C0E24692558672B00EE12F5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4C0E246F2558677900EE12F5 /* ChatTableCell.swift */,
+				4C0E24992558763E00EE12F5 /* SettingsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4C0E247725586C6C00EE12F5 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				4C0E247825586C8A00EE12F5 /* User.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		4C0E247D2558714800EE12F5 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4C0E247E2558716A00EE12F5 /* TabBarController.swift */,
+				4C0E2486255871C100EE12F5 /* TabBar.storyboard */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		4C0E248B255872EB00EE12F5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4C0E248C255873E700EE12F5 /* SettingsViewController.swift */,
+				4C0E2494255873F100EE12F5 /* Settings.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		4C1B42A425584D6A006F2482 = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +183,15 @@
 		4C1B42AF25584D6A006F2482 /* iChat */ = {
 			isa = PBXGroup;
 			children = (
+				4C0E248B255872EB00EE12F5 /* Settings */,
+				4C0E247D2558714800EE12F5 /* TabBar */,
+				4C0E247725586C6C00EE12F5 /* Class */,
+				4C0E24692558672B00EE12F5 /* Cells */,
+				4C0E245E2558662D00EE12F5 /* Home */,
+				4C0E24592558661400EE12F5 /* Extension */,
+				4C0E24552558660800EE12F5 /* Login */,
 				4C1B42B025584D6A006F2482 /* AppDelegate.swift */,
 				4C1B42B225584D6A006F2482 /* SceneDelegate.swift */,
-				4C1B42B425584D6A006F2482 /* ViewController.swift */,
-				4C1B42E325584E07006F2482 /* RoundedView.swift */,
-				4C1B42B625584D6A006F2482 /* Main.storyboard */,
 				4C1B42B925584D6B006F2482 /* Assets.xcassets */,
 				4C1B42BB25584D6B006F2482 /* LaunchScreen.storyboard */,
 				4C1B42BE25584D6B006F2482 /* Info.plist */,
@@ -234,9 +320,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0E2487255871C100EE12F5 /* TabBar.storyboard in Resources */,
 				4C1B42BD25584D6B006F2482 /* LaunchScreen.storyboard in Resources */,
 				4C1B42BA25584D6B006F2482 /* Assets.xcassets in Resources */,
+				4C0E2495255873F200EE12F5 /* Settings.storyboard in Resources */,
 				4C1B42B825584D6A006F2482 /* Main.storyboard in Resources */,
+				4C0E24602558664700EE12F5 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +351,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C1B42E425584E07006F2482 /* RoundedView.swift in Sources */,
+				4C1B42E92558632F006F2482 /* RoundedButton.swift in Sources */,
 				4C1B42B525584D6A006F2482 /* ViewController.swift in Sources */,
+				4C0E248D255873E700EE12F5 /* SettingsViewController.swift in Sources */,
+				4C0E247F2558716A00EE12F5 /* TabBarController.swift in Sources */,
 				4C1B42B125584D6A006F2482 /* AppDelegate.swift in Sources */,
+				4C0E249A2558763E00EE12F5 /* SettingsTableViewCell.swift in Sources */,
+				4C0E247925586C8A00EE12F5 /* User.swift in Sources */,
 				4C1B42B325584D6A006F2482 /* SceneDelegate.swift in Sources */,
+				4C0E24702558677900EE12F5 /* ChatTableCell.swift in Sources */,
+				4C0E24652558665C00EE12F5 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,13 +39,49 @@
                                             <constraint firstAttribute="bottom" secondItem="3iu-cr-ZoN" secondAttribute="bottom" constant="-2" id="bwj-bO-MIz"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKA-Dw-Kpn" customClass="RoundedButton" customModule="iChat" customModuleProvider="target">
+                                        <rect key="frame" x="91" y="361" width="233" height="30"/>
+                                        <color key="backgroundColor" red="0.58697978740000001" green="0.3502915862" blue="0.80224857230000002" alpha="0.80139661819999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="97p-eT-z0O"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y5l-er-avp">
+                                        <rect key="frame" x="87" y="259" width="240" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fve-SW-lW1">
+                                        <rect key="frame" x="87" y="301" width="240" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Fve-SW-lW1" firstAttribute="leading" secondItem="Vnd-Yf-Yc2" secondAttribute="leading" constant="87" id="401-xs-rDw"/>
                                     <constraint firstAttribute="trailing" secondItem="OVK-ph-O36" secondAttribute="trailing" id="96B-vd-RPV"/>
+                                    <constraint firstAttribute="bottom" secondItem="kKA-Dw-Kpn" secondAttribute="bottom" constant="107" id="9Kr-v1-73x"/>
+                                    <constraint firstItem="y5l-er-avp" firstAttribute="top" secondItem="Vnd-Yf-Yc2" secondAttribute="top" constant="259" id="E3T-3s-QOE"/>
+                                    <constraint firstItem="y5l-er-avp" firstAttribute="leading" secondItem="Vnd-Yf-Yc2" secondAttribute="leading" constant="87" id="Heg-34-3TZ"/>
+                                    <constraint firstItem="kKA-Dw-Kpn" firstAttribute="top" secondItem="Fve-SW-lW1" secondAttribute="bottom" constant="26" id="NDJ-k2-6pA"/>
                                     <constraint firstItem="OVK-ph-O36" firstAttribute="top" secondItem="Vnd-Yf-Yc2" secondAttribute="top" constant="162" id="TAw-5I-gqP"/>
                                     <constraint firstAttribute="bottom" secondItem="OVK-ph-O36" secondAttribute="bottom" constant="276" id="U9p-wz-MRU"/>
                                     <constraint firstItem="OVK-ph-O36" firstAttribute="leading" secondItem="Vnd-Yf-Yc2" secondAttribute="leading" constant="354" id="dSo-Nx-QtY"/>
+                                    <constraint firstItem="kKA-Dw-Kpn" firstAttribute="leading" secondItem="Vnd-Yf-Yc2" secondAttribute="leading" constant="91" id="grZ-ru-MdF"/>
+                                    <constraint firstAttribute="trailing" secondItem="y5l-er-avp" secondAttribute="trailing" constant="87" id="j2l-rT-vqr"/>
+                                    <constraint firstAttribute="trailing" secondItem="kKA-Dw-Kpn" secondAttribute="trailing" constant="90" id="oF6-J1-gQS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fve-SW-lW1" secondAttribute="trailing" constant="87" id="vMR-qt-g9r"/>
+                                    <constraint firstItem="Fve-SW-lW1" firstAttribute="top" secondItem="y5l-er-avp" secondAttribute="bottom" constant="8" symbolic="YES" id="zdd-zY-S3M"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFH-AD-RIc">
@@ -69,6 +105,7 @@
                     <connections>
                         <outlet property="backView" destination="OVK-ph-O36" id="ewx-fM-KLw"/>
                         <outlet property="cornerView" destination="3iu-cr-ZoN" id="jWH-uC-d6a"/>
+                        <outlet property="loginButton" destination="kKA-Dw-Kpn" id="osf-wY-WjL"/>
                         <outlet property="topView" destination="eFH-AD-RIc" id="AJm-G4-QbE"/>
                     </connections>
                 </viewController>
@@ -77,6 +114,11 @@
             <point key="canvasLocation" x="531.8840579710145" y="101.78571428571428"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="kKA-Dw-Kpn">
+            <size key="intrinsicContentSize" width="38" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
