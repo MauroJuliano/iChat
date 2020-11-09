@@ -65,22 +65,35 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fR-Pl-Nhb">
+                                        <rect key="frame" x="111" y="400" width="191" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="RegisterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0p-4R-dZn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Fve-SW-lW1" firstAttribute="leading" secondItem="Vnd-Yf-Yc2" secondAttribute="leading" constant="87" id="401-xs-rDw"/>
+                                    <constraint firstAttribute="trailing" secondItem="kKA-Dw-Kpn" secondAttribute="trailing" constant="90" id="5gI-lz-SXE"/>
                                     <constraint firstAttribute="trailing" secondItem="OVK-ph-O36" secondAttribute="trailing" id="96B-vd-RPV"/>
-                                    <constraint firstAttribute="bottom" secondItem="kKA-Dw-Kpn" secondAttribute="bottom" constant="107" id="9Kr-v1-73x"/>
+                                    <constraint firstItem="7fR-Pl-Nhb" firstAttribute="top" secondItem="kKA-Dw-Kpn" secondAttribute="bottom" constant="9" id="AKC-si-uw9"/>
                                     <constraint firstItem="y5l-er-avp" firstAttribute="top" secondItem="Vnd-Yf-Yc2" secondAttribute="top" constant="259" id="E3T-3s-QOE"/>
                                     <constraint firstItem="y5l-er-avp" firstAttribute="leading" secondItem="Vnd-Yf-Yc2" secondAttribute="leading" constant="87" id="Heg-34-3TZ"/>
-                                    <constraint firstItem="kKA-Dw-Kpn" firstAttribute="top" secondItem="Fve-SW-lW1" secondAttribute="bottom" constant="26" id="NDJ-k2-6pA"/>
+                                    <constraint firstItem="kKA-Dw-Kpn" firstAttribute="leading" secondItem="Vnd-Yf-Yc2" secondAttribute="leading" constant="91" id="RjZ-K5-ipg"/>
                                     <constraint firstItem="OVK-ph-O36" firstAttribute="top" secondItem="Vnd-Yf-Yc2" secondAttribute="top" constant="162" id="TAw-5I-gqP"/>
                                     <constraint firstAttribute="bottom" secondItem="OVK-ph-O36" secondAttribute="bottom" constant="276" id="U9p-wz-MRU"/>
+                                    <constraint firstItem="kKA-Dw-Kpn" firstAttribute="top" secondItem="Fve-SW-lW1" secondAttribute="bottom" constant="26" id="Wys-TP-ooQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="7fR-Pl-Nhb" secondAttribute="trailing" constant="112" id="b2d-x4-Pft"/>
                                     <constraint firstItem="OVK-ph-O36" firstAttribute="leading" secondItem="Vnd-Yf-Yc2" secondAttribute="leading" constant="354" id="dSo-Nx-QtY"/>
-                                    <constraint firstItem="kKA-Dw-Kpn" firstAttribute="leading" secondItem="Vnd-Yf-Yc2" secondAttribute="leading" constant="91" id="grZ-ru-MdF"/>
                                     <constraint firstAttribute="trailing" secondItem="y5l-er-avp" secondAttribute="trailing" constant="87" id="j2l-rT-vqr"/>
-                                    <constraint firstAttribute="trailing" secondItem="kKA-Dw-Kpn" secondAttribute="trailing" constant="90" id="oF6-J1-gQS"/>
                                     <constraint firstAttribute="trailing" secondItem="Fve-SW-lW1" secondAttribute="trailing" constant="87" id="vMR-qt-g9r"/>
+                                    <constraint firstItem="7fR-Pl-Nhb" firstAttribute="leading" secondItem="Vnd-Yf-Yc2" secondAttribute="leading" constant="111" id="xIi-QE-R6g"/>
+                                    <constraint firstAttribute="bottom" secondItem="7fR-Pl-Nhb" secondAttribute="bottom" constant="69" id="xap-RO-XGB"/>
                                     <constraint firstItem="Fve-SW-lW1" firstAttribute="top" secondItem="y5l-er-avp" secondAttribute="bottom" constant="8" symbolic="YES" id="zdd-zY-S3M"/>
                                 </constraints>
                             </view>
@@ -120,6 +133,9 @@
         </designable>
     </designables>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

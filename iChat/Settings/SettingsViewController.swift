@@ -37,7 +37,7 @@ class SettingsViewController: UIViewController {
     }
 }
 extension SettingsViewController: UITableViewDelegate{
-    
+   
 }
 extension SettingsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

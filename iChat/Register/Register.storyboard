@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OlJ-m4-8jk">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Register-->
+        <scene sceneID="9EC-b8-Gp3">
+            <objects>
+                <viewController storyboardIdentifier="Register" title="Register" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OlJ-m4-8jk" customClass="RegisterViewController" customModule="iChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6z7-w5-tR2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPH-cE-tPg">
+                                <rect key="frame" x="42" y="389" width="330" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="M4r-zW-XtA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cax-de-uMa">
+                                <rect key="frame" x="42" y="438" width="330" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="M2k-Ee-TcB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cc1-0a-gSN">
+                                <rect key="frame" x="42" y="489" width="330" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="IiG-mV-9hp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I0t-Of-Kej">
+                                <rect key="frame" x="42" y="541" width="330" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="43H-Yh-Eif"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdW-CU-6Y2" customClass="RoundedButton" customModule="iChat" customModuleProvider="target">
+                                <rect key="frame" x="81" y="688" width="253" height="56"/>
+                                <color key="backgroundColor" red="1" green="0.79001772110000001" blue="0.98088759130000003" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Ide-KO-NY0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill the forms below to register in our system." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADB-Pr-SUP">
+                                <rect key="frame" x="42" y="215" width="330" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr7-lr-sc0">
+                                <rect key="frame" x="42" y="153" width="120" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LWo-1D-L5a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uPH-cE-tPg" firstAttribute="leading" secondItem="LWo-1D-L5a" secondAttribute="leading" constant="42" id="4Mx-Gd-HId"/>
+                            <constraint firstItem="I0t-Of-Kej" firstAttribute="top" secondItem="cc1-0a-gSN" secondAttribute="bottom" constant="18" id="59v-ou-hFP"/>
+                            <constraint firstItem="Tr7-lr-sc0" firstAttribute="top" secondItem="LWo-1D-L5a" secondAttribute="top" constant="109" id="7Ca-OW-zS3"/>
+                            <constraint firstItem="cc1-0a-gSN" firstAttribute="top" secondItem="Cax-de-uMa" secondAttribute="bottom" constant="17" id="Dzn-Dc-Mpe"/>
+                            <constraint firstItem="cc1-0a-gSN" firstAttribute="leading" secondItem="LWo-1D-L5a" secondAttribute="leading" constant="42" id="H4o-JN-LLs"/>
+                            <constraint firstItem="ADB-Pr-SUP" firstAttribute="leading" secondItem="LWo-1D-L5a" secondAttribute="leading" constant="42" id="Kbm-Rs-dA2"/>
+                            <constraint firstItem="I0t-Of-Kej" firstAttribute="leading" secondItem="LWo-1D-L5a" secondAttribute="leading" constant="42" id="NNi-tb-urS"/>
+                            <constraint firstItem="LWo-1D-L5a" firstAttribute="trailing" secondItem="Tr7-lr-sc0" secondAttribute="trailing" constant="252" id="Psu-Jv-u6j"/>
+                            <constraint firstItem="Tr7-lr-sc0" firstAttribute="leading" secondItem="LWo-1D-L5a" secondAttribute="leading" constant="42" id="QAq-Ft-PiO"/>
+                            <constraint firstItem="LWo-1D-L5a" firstAttribute="trailing" secondItem="Cax-de-uMa" secondAttribute="trailing" constant="42" id="Uq2-ku-QyQ"/>
+                            <constraint firstItem="rdW-CU-6Y2" firstAttribute="top" secondItem="I0t-Of-Kej" secondAttribute="bottom" constant="113" id="ZOt-Ua-j9o"/>
+                            <constraint firstItem="rdW-CU-6Y2" firstAttribute="leading" secondItem="LWo-1D-L5a" secondAttribute="leading" constant="81" id="aGG-0u-xv6"/>
+                            <constraint firstItem="LWo-1D-L5a" firstAttribute="trailing" secondItem="uPH-cE-tPg" secondAttribute="trailing" constant="42" id="aVq-qP-OHm"/>
+                            <constraint firstItem="Cax-de-uMa" firstAttribute="leading" secondItem="LWo-1D-L5a" secondAttribute="leading" constant="42" id="bIB-IG-kXZ"/>
+                            <constraint firstItem="Cax-de-uMa" firstAttribute="top" secondItem="uPH-cE-tPg" secondAttribute="bottom" constant="15" id="imH-Fu-uxk"/>
+                            <constraint firstItem="ADB-Pr-SUP" firstAttribute="top" secondItem="Tr7-lr-sc0" secondAttribute="bottom" constant="21" id="jEG-BF-tMo"/>
+                            <constraint firstItem="LWo-1D-L5a" firstAttribute="trailing" secondItem="cc1-0a-gSN" secondAttribute="trailing" constant="42" id="k75-5V-ves"/>
+                            <constraint firstItem="LWo-1D-L5a" firstAttribute="bottom" secondItem="rdW-CU-6Y2" secondAttribute="bottom" constant="118" id="l1d-Se-DWw"/>
+                            <constraint firstItem="LWo-1D-L5a" firstAttribute="trailing" secondItem="I0t-Of-Kej" secondAttribute="trailing" constant="42" id="pIm-V8-y2d"/>
+                            <constraint firstItem="uPH-cE-tPg" firstAttribute="top" secondItem="ADB-Pr-SUP" secondAttribute="bottom" constant="131" id="pNd-E1-Goi"/>
+                            <constraint firstItem="LWo-1D-L5a" firstAttribute="trailing" secondItem="ADB-Pr-SUP" secondAttribute="trailing" constant="42" id="qYN-kq-7R0"/>
+                            <constraint firstItem="LWo-1D-L5a" firstAttribute="trailing" secondItem="rdW-CU-6Y2" secondAttribute="trailing" constant="80" id="zwQ-Fi-ylh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDl-it-FKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276.81159420289856" y="94.419642857142847"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="rdW-CU-6Y2">
+            <size key="intrinsicContentSize" width="73" height="36"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

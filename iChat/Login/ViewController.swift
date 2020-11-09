@@ -32,6 +32,11 @@ class ViewController: UIViewController {
             present(viewcontroller, animated: true, completion: nil)
         }
     }
+    @IBAction func RegisterButton(_ sender: Any) {
+        if let viewcontroller = UIStoryboard(name: "Register", bundle: nil).instantiateInitialViewController() as? RegisterViewController {
+            present(viewcontroller, animated: true, completion: nil)
+        }
+    }
     
 }
 extension UIView {

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="glf-DO-wnc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="Ubg-af-JYS">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="glf-DO-wnc" customClass="MessagesViewController" customModule="iChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SaN-Kw-Gbd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5AA-bc-XW9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="815"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" rowHeight="174" id="bQv-0H-sGE" customClass="MessageTableCell" customModule="iChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="174"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bQv-0H-sGE" id="mSg-Ig-ebR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFi-hB-FFb" customClass="RoundedView" customModule="iChat" customModuleProvider="target">
+                                                    <rect key="frame" x="154" y="11" width="240" height="151"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYD-An-1wv">
+                                                            <rect key="frame" x="12" y="12" width="216" height="127"/>
+                                                            <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.79001772106234835" blue="0.98088759133966663" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="LYD-An-1wv" firstAttribute="leading" secondItem="mFi-hB-FFb" secondAttribute="leadingMargin" constant="4" id="AYF-Vv-q3F"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="LYD-An-1wv" secondAttribute="bottom" constant="4" id="M5U-Ki-puQ"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="LYD-An-1wv" secondAttribute="trailing" constant="4" id="qa7-M5-6aH"/>
+                                                        <constraint firstItem="LYD-An-1wv" firstAttribute="top" secondItem="mFi-hB-FFb" secondAttribute="topMargin" constant="4" id="r6d-NB-Tad"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mFi-hB-FFb" firstAttribute="leading" secondItem="mSg-Ig-ebR" secondAttribute="leadingMargin" constant="134" id="E29-KR-zK7"/>
+                                                <constraint firstItem="mFi-hB-FFb" firstAttribute="trailing" secondItem="mSg-Ig-ebR" secondAttribute="trailingMargin" id="LbA-Wg-dUD"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mFi-hB-FFb" secondAttribute="bottom" constant="1" id="PqH-6E-ASX"/>
+                                                <constraint firstItem="mFi-hB-FFb" firstAttribute="top" secondItem="mSg-Ig-ebR" secondAttribute="topMargin" id="wkk-c2-537"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bubbleView" destination="mFi-hB-FFb" id="zlh-AG-fWI"/>
+                                            <outlet property="messageLabel" destination="LYD-An-1wv" id="TEF-Ql-kIJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfd-rS-2nO">
+                                <rect key="frame" x="0.0" y="815" width="414" height="81"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1K-3F-tr1">
+                                        <rect key="frame" x="25" y="14" width="365" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="365" id="zUh-7c-l19"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="G1K-3F-tr1" secondAttribute="bottom" constant="33" id="0jF-3v-8ef"/>
+                                    <constraint firstItem="G1K-3F-tr1" firstAttribute="leading" secondItem="Pfd-rS-2nO" secondAttribute="leading" constant="25" id="A6O-Wh-IM7"/>
+                                    <constraint firstItem="G1K-3F-tr1" firstAttribute="top" secondItem="Pfd-rS-2nO" secondAttribute="top" constant="14" id="FJy-tS-PIy"/>
+                                    <constraint firstAttribute="trailing" secondItem="G1K-3F-tr1" secondAttribute="trailing" constant="24" id="Yn9-nj-59U"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sfG-dm-khL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Pfd-rS-2nO" secondAttribute="bottom" id="6NE-DS-Efg"/>
+                            <constraint firstItem="5AA-bc-XW9" firstAttribute="trailing" secondItem="sfG-dm-khL" secondAttribute="trailing" id="7OZ-qk-xlI"/>
+                            <constraint firstItem="5AA-bc-XW9" firstAttribute="leading" secondItem="sfG-dm-khL" secondAttribute="leading" id="JFm-cg-L2V"/>
+                            <constraint firstItem="Pfd-rS-2nO" firstAttribute="leading" secondItem="sfG-dm-khL" secondAttribute="leading" id="QPP-Eq-Puq"/>
+                            <constraint firstItem="5AA-bc-XW9" firstAttribute="leading" secondItem="sfG-dm-khL" secondAttribute="leading" id="RC5-SS-LLg"/>
+                            <constraint firstItem="Pfd-rS-2nO" firstAttribute="top" secondItem="5AA-bc-XW9" secondAttribute="bottom" id="TWN-L4-PMg"/>
+                            <constraint firstItem="5AA-bc-XW9" firstAttribute="top" secondItem="SaN-Kw-Gbd" secondAttribute="top" id="m2f-nQ-9qG"/>
+                            <constraint firstItem="Pfd-rS-2nO" firstAttribute="trailing" secondItem="sfG-dm-khL" secondAttribute="trailing" id="qXI-zc-P7o"/>
+                            <constraint firstItem="5AA-bc-XW9" firstAttribute="top" secondItem="SaN-Kw-Gbd" secondAttribute="top" id="u3z-bt-L5t"/>
+                            <constraint firstItem="5AA-bc-XW9" firstAttribute="trailing" secondItem="sfG-dm-khL" secondAttribute="trailing" id="zsu-V5-1zK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageTableView" destination="5AA-bc-XW9" id="oYz-Z7-rV3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FXi-mN-UkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="166.66666666666669" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
