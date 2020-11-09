@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
 class SettingsViewController: UIViewController {
     @IBOutlet var settingsTableView: UITableView!
     @IBOutlet var userImage: UIImageView!
@@ -30,6 +31,8 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func logoutButton(_ sender: Any) {
+        try! Auth.auth().signOut()
+        
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? ViewController{
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)

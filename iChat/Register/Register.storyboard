@@ -63,6 +63,9 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButton:" destination="OlJ-m4-8jk" eventType="touchUpInside" id="D6F-97-MS8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill the forms below to register in our system." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADB-Pr-SUP">
                                 <rect key="frame" x="42" y="215" width="330" height="43"/>
@@ -104,6 +107,12 @@
                             <constraint firstItem="LWo-1D-L5a" firstAttribute="trailing" secondItem="rdW-CU-6Y2" secondAttribute="trailing" constant="80" id="zwQ-Fi-ylh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassTextField" destination="I0t-Of-Kej" id="Vgr-QS-3GT"/>
+                        <outlet property="emailTextField" destination="Cax-de-uMa" id="hNo-mc-1w1"/>
+                        <outlet property="nameTextField" destination="uPH-cE-tPg" id="oQW-v0-DGL"/>
+                        <outlet property="passwordTextField" destination="cc1-0a-gSN" id="tGq-lF-cop"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDl-it-FKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

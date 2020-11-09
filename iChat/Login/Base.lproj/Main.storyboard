@@ -118,7 +118,9 @@
                     <connections>
                         <outlet property="backView" destination="OVK-ph-O36" id="ewx-fM-KLw"/>
                         <outlet property="cornerView" destination="3iu-cr-ZoN" id="jWH-uC-d6a"/>
+                        <outlet property="emailTextField" destination="y5l-er-avp" id="8C1-ER-wm0"/>
                         <outlet property="loginButton" destination="kKA-Dw-Kpn" id="osf-wY-WjL"/>
+                        <outlet property="passwordTextField" destination="Fve-SW-lW1" id="He1-IN-GkP"/>
                         <outlet property="topView" destination="eFH-AD-RIc" id="AJm-G4-QbE"/>
                     </connections>
                 </viewController>
