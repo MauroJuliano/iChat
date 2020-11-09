@@ -10,6 +10,8 @@ import AVFoundation
 import Firebase
 class ViewController: UIViewController {
     
+    @IBOutlet var textFieldView: UIView!
+    @IBOutlet var textFieldView2: UIView!
     @IBOutlet var cornerView: UIView!
     @IBOutlet var topView: UIView!
     @IBOutlet var backView: UIView!
@@ -26,6 +28,8 @@ class ViewController: UIViewController {
         topView.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens2")!)
         loginButton.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens2")!)
         backView.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens4")!)
+        textFieldView.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens2")!)
+        textFieldView2.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens2")!)
         
         topView.roundCorners(.bottomLeft, radius: 60)
         cornerView.roundCorners(.topRight, radius: 60)
