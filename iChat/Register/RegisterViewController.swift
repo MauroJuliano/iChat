@@ -70,7 +70,7 @@ class RegisterViewController: UIViewController {
         let userReference = self.ref.child("users")
         if let uid = Auth.auth().currentUser?.uid {
             let newReference = userReference.child(uid)
-            newReference.setValue(["Name": self.nameTextField.text!, "email": self.emailTextField.text!])
+            newReference.setValue(["Name": self.nameTextField.text!, "email": self.emailTextField.text!, "uid": uid])
         }
         
     }

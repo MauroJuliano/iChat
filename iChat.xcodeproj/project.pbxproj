@@ -29,6 +29,9 @@
 		4C1B42D325584D6B006F2482 /* iChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B42D225584D6B006F2482 /* iChatUITests.swift */; };
 		4C1B42E425584E07006F2482 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B42E325584E07006F2482 /* RoundedView.swift */; };
 		4C1B42E92558632F006F2482 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B42E82558632F006F2482 /* RoundedButton.swift */; };
+		4C524D102559FD60006B1D7F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C524D0F2559FD60006B1D7F /* FriendsViewController.swift */; };
+		4C524D182559FD6D006B1D7F /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C524D172559FD6D006B1D7F /* Friends.storyboard */; };
+		4C524D1E255A0CBA006B1D7F /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C524D1D255A0CBA006B1D7F /* FriendsTableViewCell.swift */; };
 		4C6CCA992558C4B4002DC0F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C6CCA982558C4B4002DC0F4 /* GoogleService-Info.plist */; };
 		4C800BC82558BF6600957F0F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C800BC72558BF6600957F0F /* RegisterViewController.swift */; };
 		4C800BD02558BF7700957F0F /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C800BCF2558BF7700957F0F /* Register.storyboard */; };
@@ -86,6 +89,9 @@
 		4C1B42D425584D6B006F2482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C1B42E325584E07006F2482 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		4C1B42E82558632F006F2482 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		4C524D0F2559FD60006B1D7F /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		4C524D172559FD6D006B1D7F /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		4C524D1D255A0CBA006B1D7F /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		4C6CCA982558C4B4002DC0F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C800BC72558BF6600957F0F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4C800BCF2558BF7700957F0F /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 				4C0E246F2558677900EE12F5 /* ChatTableCell.swift */,
 				4C0E24992558763E00EE12F5 /* SettingsTableViewCell.swift */,
 				4C0E24A9255883BF00EE12F5 /* MessageTableCell.swift */,
+				4C524D1D255A0CBA006B1D7F /* FriendsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -225,6 +232,7 @@
 		4C1B42AF25584D6A006F2482 /* iChat */ = {
 			isa = PBXGroup;
 			children = (
+				4C524D0E2559FD43006B1D7F /* Friends */,
 				4C800BC62558BF4B00957F0F /* Register */,
 				4C0E249E25587FA800EE12F5 /* Messages */,
 				4C0E248B255872EB00EE12F5 /* Settings */,
@@ -260,6 +268,15 @@
 				4C1B42D425584D6B006F2482 /* Info.plist */,
 			);
 			path = iChatUITests;
+			sourceTree = "<group>";
+		};
+		4C524D0E2559FD43006B1D7F /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				4C524D0F2559FD60006B1D7F /* FriendsViewController.swift */,
+				4C524D172559FD6D006B1D7F /* Friends.storyboard */,
+			);
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		4C800BC62558BF4B00957F0F /* Register */ = {
@@ -408,6 +425,7 @@
 				4C1B42BA25584D6B006F2482 /* Assets.xcassets in Resources */,
 				4C0E2495255873F200EE12F5 /* Settings.storyboard in Resources */,
 				4C0E24A525587FC600EE12F5 /* Messages.storyboard in Resources */,
+				4C524D182559FD6D006B1D7F /* Friends.storyboard in Resources */,
 				4C1B42B825584D6A006F2482 /* Main.storyboard in Resources */,
 				4C0E24602558664700EE12F5 /* Home.storyboard in Resources */,
 				4C800BD02558BF7700957F0F /* Register.storyboard in Resources */,
@@ -538,11 +556,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C524D102559FD60006B1D7F /* FriendsViewController.swift in Sources */,
 				4C1B42E425584E07006F2482 /* RoundedView.swift in Sources */,
 				4C1B42E92558632F006F2482 /* RoundedButton.swift in Sources */,
 				4C1B42B525584D6A006F2482 /* ViewController.swift in Sources */,
 				4C0E248D255873E700EE12F5 /* SettingsViewController.swift in Sources */,
 				4C0E24AA255883BF00EE12F5 /* MessageTableCell.swift in Sources */,
+				4C524D1E255A0CBA006B1D7F /* FriendsTableViewCell.swift in Sources */,
 				4C0E247F2558716A00EE12F5 /* TabBarController.swift in Sources */,
 				4C1B42B125584D6A006F2482 /* AppDelegate.swift in Sources */,
 				4C0E24A025587FBC00EE12F5 /* MessagesViewController.swift in Sources */,
