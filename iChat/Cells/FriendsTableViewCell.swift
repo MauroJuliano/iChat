@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class FriendsTableViewCell: UITableViewCell {
     @IBOutlet var userImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
@@ -23,9 +23,11 @@ class FriendsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func setup(user: UserData){
-        userImage.image = UIImage(named: user.image)
+        let url = URL(string: user.image)
+        userImage.kf.setImage(with: url)
         nameLabel.text = user.name
         viewbackground.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens2")!)
+        
     }
 
 }

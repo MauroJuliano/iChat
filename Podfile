@@ -7,6 +7,7 @@ target 'iChat' do
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
+  pod 'Kingfisher', '~> 5.0'
   # Pods for iChat
 
   target 'iChatTests' do

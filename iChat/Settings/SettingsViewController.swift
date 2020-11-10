@@ -21,15 +21,46 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userImage.image = UIImage(named: "irina")
-        usernameLabel.text = "Irina"
-        emailLabel.text = "irina@email.com"
-        
+
         settingsTableView.dataSource = self
         settingsTableView.delegate = self
         
         logoutButton.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens2")!)
+        setupUser()
         // Do any additional setup after loading the view.
+    }
+    func setupUser(){
+        self.ref = Database.database().reference()
+        let uid = Auth.auth().currentUser?.uid
+        let reference = ref.child("users")
+        reference.observeSingleEvent(of: .value) { (snapshot) in
+            
+            if let users = snapshot.value as? [String: AnyObject] {
+                
+                for(_, value) in users {
+                    if let user = value["uid"] as? String{
+                        if user == uid {
+                            
+                            let userToshow = UserData()
+                            
+                                let user = value["Name"] as? String
+                                let image = value["image"] as? String
+                                let email = value["email"] as? String
+                            
+                            userToshow.name = user
+                            userToshow.image = image
+                            userToshow.email = email
+                            
+                            //pass data to outlets
+                            let url = URL(string: userToshow.image)
+                            self.userImage.kf.setImage(with: url)
+                            self.usernameLabel.text = userToshow.name
+                            self.emailLabel.text = userToshow.email
+                        }
+                    }
+                }
+            }
+        }
     }
     func addFriend(){
         let alert = UIAlertController(title: "Invite a friend",
