@@ -10,6 +10,7 @@ import UIKit
 class FriendsTableViewCell: UITableViewCell {
     @IBOutlet var userImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var viewbackground: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,9 +22,10 @@ class FriendsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setup(user: User){
+    func setup(user: UserData){
         userImage.image = UIImage(named: user.image)
         nameLabel.text = user.name
+        viewbackground.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens2")!)
     }
 
 }

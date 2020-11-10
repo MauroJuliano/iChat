@@ -12,21 +12,22 @@ import FirebaseDatabase
 class FriendsViewController: UIViewController {
     @IBOutlet var friendsSearchBar: UISearchBar!
     @IBOutlet var friendsTableView: UITableView!
-    var userArray = [User]()
+    var userArray = [UserData]()
     var idArray = [String]()
+    var ids: String?
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         friendsTableView.delegate = self
         friendsTableView.dataSource = self
-        loadData()
+        loadUser()
         // Do any additional setup after loading the view.
     }
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    func loadData(){
+    func loadUser(){
         self.ref = Database.database().reference()
         // read users who your following.
         if let uid = Auth.auth().currentUser?.uid {
@@ -35,13 +36,64 @@ class FriendsViewController: UIViewController {
                 if let users = snapshot.value as? [String: AnyObject] {
                     for (_, value) in users {
                         if let user = value["user"] as? String {
-                            self.idArray = [user]
-                            print(self.idArray)
+                            let userToshow = UserID()
+                            
+                            let user = value["user"] as? String
+                            userToshow.userID = user
+                            self.idArray.append(userToshow.userID)
+                            
                         }
                     }
                 }
                 
             })
+            loadData()
+        }
+    }
+    func loadData(){
+        self.ref = Database.database().reference()
+    
+        let reference = ref.child("users")
+        reference.observeSingleEvent(of: .value) { (snapshot) in
+            if let users = snapshot.value as? [String: AnyObject] {
+                for(_, value) in users {
+                    if let user = value["uid"] as? String{
+                        
+                        if self.idArray.contains(user){
+                            
+                        }
+                    }
+                }
+            }
+            self.loadFollowing()
+        }
+    }
+    func loadFollowing(){
+        self.ref = Database.database().reference()
+        
+        let reference = ref.child("users")
+        reference.observeSingleEvent(of: .value) { (snapshot) in
+            
+            if let users = snapshot.value as? [String: AnyObject] {
+                
+                for(_, value) in users {
+                    if let user = value["uid"] as? String{
+                        
+                        if self.idArray.contains(user) {
+                            
+                            let userToshow = UserData()
+                                let user = value["Name"] as? String
+                                let image = value["image"] as? String
+                            
+                            userToshow.name = user
+                            userToshow.image = image
+                            print(userToshow.image)
+                            self.userArray.append(userToshow)
+                        }
+                    }
+                }
+            }
+            self.friendsTableView.reloadData()
         }
     }
     

@@ -17,3 +17,11 @@ class User{
         self.image = image
     }
 }
+class UserData: NSObject{
+    var name: String!
+    var image: String!
+    
+}
+class UserID: NSObject{
+    var userID: String!
+}
