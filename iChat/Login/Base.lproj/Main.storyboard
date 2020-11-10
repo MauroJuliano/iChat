@@ -139,6 +139,7 @@
                             <constraint firstItem="Vnd-Yf-Yc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yQU-jk-Fen"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3xy-ZU-q2B"/>
                     <connections>
                         <outlet property="backView" destination="OVK-ph-O36" id="ewx-fM-KLw"/>
                         <outlet property="cornerView" destination="3iu-cr-ZoN" id="jWH-uC-d6a"/>
@@ -152,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531.8840579710145" y="101.78571428571428"/>
+            <point key="canvasLocation" x="1442.0289855072465" y="101.78571428571428"/>
         </scene>
     </scenes>
     <designables>

@@ -21,7 +21,9 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.navigationItem.title = "Settings"
+        navigationController?.navigationBar.isHidden = true
+        
         settingsTableView.dataSource = self
         settingsTableView.delegate = self
         
@@ -118,8 +120,10 @@ class SettingsViewController: UIViewController {
     @IBAction func newMessageButton(_ sender: Any) {
         if let vc = UIStoryboard(name: "Friends", bundle: nil).instantiateInitialViewController() as? FriendsViewController {
             print("friends")
+            
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
+            
         }
     }
     @IBAction func logoutButton(_ sender: Any) {

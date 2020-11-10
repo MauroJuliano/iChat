@@ -22,9 +22,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let userID = Auth.auth().currentUser?.uid {
-            print(userID)
-        }
+      
+        
         topView.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens2")!)
         loginButton.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens2")!)
         backView.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens4")!)
@@ -33,8 +32,29 @@ class ViewController: UIViewController {
         
         topView.roundCorners(.bottomLeft, radius: 60)
         cornerView.roundCorners(.topRight, radius: 60)
-        
+        //userIsLogged()
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let userID = Auth.auth().currentUser?.uid {
+                if let viewcontroller = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController() as? TabBarController {
+               
+                viewcontroller.modalPresentationStyle = .fullScreen
+                present(viewcontroller, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func userIsLogged(){
+        if let userID = Auth.auth().currentUser?.uid {
+            print(userID)
+            
+                if let viewcontroller = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController() as? TabBarController {
+                viewcontroller.modalPresentationStyle = .fullScreen
+                present(viewcontroller, animated: true, completion: nil)
+            }
+        }
     }
     func alert(){
         

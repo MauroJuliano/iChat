@@ -87,7 +87,7 @@ class FriendsViewController: UIViewController {
                             
                             userToshow.name = user
                             userToshow.image = image
-                            print(userToshow.image)
+                            
                             self.userArray.append(userToshow)
                         }
                     }
@@ -99,7 +99,14 @@ class FriendsViewController: UIViewController {
     
 }
 extension FriendsViewController: UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = UIStoryboard(name: "Messages", bundle: nil).instantiateInitialViewController() as? MessagesViewController{
+            vc.user = userArray[indexPath.row]
+//            vc.modalPresentationStyle = .fullScreen
+//            present(vc, animated: true, completion: nil)
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 extension FriendsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
