@@ -21,14 +21,16 @@ class MessagesViewController: UIViewController {
     var dateMessage: String?
     var hourMessage: String?
     var ref: DatabaseReference!
-    var userArray = [userMessage]()
+    var userArray = [String: Any]()
     var user: UserData?
 
     var chatMessages = [ChatMessage]()
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonShow()
-        
+        if let nameUser = user?.name {
+            self.title = nameUser
+        }
         tabBarController?.tabBar.isHidden = true
         
         messageTableView.delegate = self
@@ -111,57 +113,44 @@ class MessagesViewController: UIViewController {
         }
     }
     func loadData(){
+        //self.chatMessages.removeAll()
+        self.userArray.removeAll()
         self.ref = Database.database().reference()
         if let uid = Auth.auth().currentUser?.uid {
                 let reference = self.ref.child("messages")
-                reference.queryOrderedByKey().observeSingleEvent(of: .value) { (snapshot) in
+                reference.observe(.childAdded) { (snapshot) in
                     
-                    if let users = snapshot.value as? [String: AnyObject] {
+                    if let users = snapshot.value as? [String: Any] {
                         for(_, value) in users {
+                    
                             var userToshow = userMessage()
-
-                            let messageText = value["Text"] as? String
-                            let messageHour = value["Hour"] as? String
-                            let messageDate = value["Date"] as? String
-                            let messageID = value["fromID"] as? String
-                            let receiverID = value["receiverID"] as? String
-                            
-                            userToshow.messageText = messageText
-                            userToshow.messageHour = messageHour
-                            userToshow.messageDate = messageDate
-                            userToshow.messageID = messageID
-                            userToshow.receiverID = receiverID
-
-                            self.userArray.append(userToshow)
-                            self.loadMessage(user: userToshow)
-                                                        
+                            self.userArray = users
                     }
+                        
+                        self.loadMessage()
                 }
             }
         }
     }
-    func loadMessage(user: userMessage){
-
+    
+    func loadMessage(){
+        
+        let text2 = self.userArray["Text"]as? String
+        let idfrom = self.userArray["fromID"]as? String
+        print(text2, idfrom)
+        
         if let uid = Auth.auth().currentUser?.uid{
             if let userID = self.user?.uid{
                 
-                if user.messageID == uid {
-                    self.chatMessages.append(ChatMessage(text: user.messageText!, isIncoming: false))
-                }
-                if user.messageID == userID{
-                    self.chatMessages.append(ChatMessage(text: user.messageText!, isIncoming: true))
+                if idfrom == uid {
+                    self.chatMessages.append(ChatMessage(text: text2!, isIncoming: false))
+                }else{
+                    self.chatMessages.append(ChatMessage(text: text2!, isIncoming: true))
                 }
             }
             self.messageTableView.reloadData()
         }
     }
-    @IBAction func backButton(_ sender: Any) {
-        if let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController() as? TabBarController{
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true, completion: nil)
-        }
-    }
-    
 }
 extension MessagesViewController: UITableViewDelegate{
     
@@ -173,8 +162,9 @@ extension MessagesViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableCell
-
+        
         let chatMessage = chatMessages[indexPath.row]
+    
         cell.chatMessage = chatMessage
         return cell
     }

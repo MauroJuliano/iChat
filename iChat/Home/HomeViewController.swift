@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     var userArray = [User]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageView = UIImage(systemName: "square.and.pencil")
+        let imageView = UIImage(systemName: "square.and.pencil")!.withTintColor(.systemIndigo)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: imageView, style: .plain, target: self, action: #selector(addTapped))
         
         userArray.append(User(name: "John", lastMessage: "I'm calling you tomorrow. Good night", image: "john"))
