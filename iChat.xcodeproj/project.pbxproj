@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C088C20255AFAC3001CF008 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C088C1F255AFAC3001CF008 /* RoundedImage.swift */; };
+		4C088C28255B95C0001CF008 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C088C27255B95C0001CF008 /* Message.swift */; };
 		4C0E24602558664700EE12F5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0E245F2558664700EE12F5 /* Home.storyboard */; };
 		4C0E24652558665C00EE12F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E24642558665C00EE12F5 /* HomeViewController.swift */; };
 		4C0E24702558677900EE12F5 /* ChatTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E246F2558677900EE12F5 /* ChatTableCell.swift */; };
@@ -63,6 +64,7 @@
 		12D0DBA99DA63144D9AB3937 /* Pods-iChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChatTests.release.xcconfig"; path = "Target Support Files/Pods-iChatTests/Pods-iChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		19DFBA9DDA46DEB320F50381 /* Pods-iChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat.debug.xcconfig"; path = "Target Support Files/Pods-iChat/Pods-iChat.debug.xcconfig"; sourceTree = "<group>"; };
 		4C088C1F255AFAC3001CF008 /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
+		4C088C27255B95C0001CF008 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4C0E245F2558664700EE12F5 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4C0E24642558665C00EE12F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4C0E246F2558677900EE12F5 /* ChatTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableCell.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0E247825586C8A00EE12F5 /* User.swift */,
+				4C088C27255B95C0001CF008 /* Message.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				4C1B42B525584D6A006F2482 /* ViewController.swift in Sources */,
 				4C0E248D255873E700EE12F5 /* SettingsViewController.swift in Sources */,
 				4C0E24AA255883BF00EE12F5 /* MessageTableCell.swift in Sources */,
+				4C088C28255B95C0001CF008 /* Message.swift in Sources */,
 				4C524D1E255A0CBA006B1D7F /* FriendsTableViewCell.swift in Sources */,
 				4C0E247F2558716A00EE12F5 /* TabBarController.swift in Sources */,
 				4C1B42B125584D6A006F2482 /* AppDelegate.swift in Sources */,

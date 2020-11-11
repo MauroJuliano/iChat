@@ -21,6 +21,7 @@ class UserData: NSObject{
     var name: String!
     var image: String!
     var email: String!
+    var uid: String!
 }
 class UserID: NSObject{
     var userID: String!
