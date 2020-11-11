@@ -23,13 +23,7 @@ class MessagesViewController: UIViewController {
     var ref: DatabaseReference!
     var userArray = [userMessage]()
     var user: UserData?
-    
-//    let chatMessages = [
-//        ChatMessage(text: "But if we're strong enough to let it in", isIncoming: true),
-//        ChatMessage(text: "We're strong enough to let it go oh oh", isIncoming: false),
-//        ChatMessage(text: "Let it all go, let it all go, let it all out now", isIncoming: true),
-//        ChatMessage(text: "if I look back to the start, now I know. I see everything true, There's still a fire in my heart, my darling", isIncoming: false),
-//    ]
+
     var chatMessages = [ChatMessage]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,73 +100,60 @@ class MessagesViewController: UIViewController {
         self.ref = Database.database().reference()
         if let uid = Auth.auth().currentUser?.uid {
             if let userID = self.user?.uid {
-                print(userID)
+               
                 let timestamp: NSNumber = NSNumber(value: Int(NSDate().timeIntervalSince1970))
-                let reference = self.ref.child("messages").child(uid).child(userID)
+                let reference = self.ref.child("messages")
                 let childRef = reference.childByAutoId()
-                let values = ["Text": messageTextField.text!,"Hour": hourMessage!, "Date": dateMessage!, "ID": uid] as [String : Any]
+                let values = ["Text": messageTextField.text!,"Hour": hourMessage!, "Date": dateMessage!, "fromID": uid, "receiverID": userID]
                 childRef.updateChildValues(values)
-                
-                let newReference = self.ref.child("messages").child(userID).child(uid)
-                let childNewRef = newReference.childByAutoId()
-                let newValues = ["Text": messageTextField.text!,"Hour": hourMessage!, "Date": dateMessage!, "ID": uid] as [String : Any]
-                childNewRef.updateChildValues(newValues)
             }
             loadData()
         }
-        
     }
     func loadData(){
         self.ref = Database.database().reference()
         if let uid = Auth.auth().currentUser?.uid {
-            if let userID = self.user?.uid{
-                let reference = self.ref.child("messages").child(uid).child(userID)
-                reference.observeSingleEvent(of: .value) { (snapshot) in
+                let reference = self.ref.child("messages")
+                reference.queryOrderedByKey().observeSingleEvent(of: .value) { (snapshot) in
+                    
                     if let users = snapshot.value as? [String: AnyObject] {
                         for(_, value) in users {
+                            var userToshow = userMessage()
 
-                            let userToshow = userMessage()
-                            print(snapshot)
                             let messageText = value["Text"] as? String
-                            let messageHour = value["Hour"] as? Int
+                            let messageHour = value["Hour"] as? String
                             let messageDate = value["Date"] as? String
-                            let messageID = value["ID"] as? String
-
+                            let messageID = value["fromID"] as? String
+                            let receiverID = value["receiverID"] as? String
+                            
                             userToshow.messageText = messageText
                             userToshow.messageHour = messageHour
                             userToshow.messageDate = messageDate
                             userToshow.messageID = messageID
-                            print(messageHour, messageText)
-                            
+                            userToshow.receiverID = receiverID
+
                             self.userArray.append(userToshow)
                             self.loadMessage(user: userToshow)
-                        }
+                                                        
                     }
                 }
-               
             }
         }
     }
     func loadMessage(user: userMessage){
-        var arrayuser = [userMessage]()
-        arrayuser.append(user)
-        
-        
+
         if let uid = Auth.auth().currentUser?.uid{
             if let userID = self.user?.uid{
                 
                 if user.messageID == uid {
                     self.chatMessages.append(ChatMessage(text: user.messageText!, isIncoming: false))
-                    
                 }
-                
                 if user.messageID == userID{
                     self.chatMessages.append(ChatMessage(text: user.messageText!, isIncoming: true))
-                   
                 }
             }
+            self.messageTableView.reloadData()
         }
-        self.messageTableView.reloadData()
     }
     @IBAction func backButton(_ sender: Any) {
         if let vc = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController() as? TabBarController{

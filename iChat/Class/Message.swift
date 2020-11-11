@@ -8,7 +8,8 @@
 import Foundation
 class userMessage: NSObject{
     var messageText: String?
-    var messageHour: Int?
+    var messageHour: String?
     var messageDate: String?
     var messageID: String?
+    var receiverID: String?
 }
