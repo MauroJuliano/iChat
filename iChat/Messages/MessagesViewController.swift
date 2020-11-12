@@ -43,7 +43,30 @@ class MessagesViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         loadData()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.async {
+            self.messageTableView.reloadData()
+            self.moveToLastComment()
+        }
+    }
     
+    func moveToLastComment() {
+        if self.messageTableView.contentSize.height > self.messageTableView.frame.height {
+            // First figure out how many sections there are
+            let lastSectionIndex = self.messageTableView!.numberOfSections - 1
+
+            // Then grab the number of rows in the last section
+            let lastRowIndex = self.messageTableView!.numberOfRows(inSection: lastSectionIndex) - 1
+
+            // Now just construct the index path
+            let pathToLastRow = NSIndexPath(row: lastRowIndex, section: lastSectionIndex)
+
+            // Make the last row visible
+            self.messageTableView?.scrollToRow(at: pathToLastRow as IndexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+        }
+    }
+        
     func buttonShow(){
         if messageTextField.text!.isEmpty || messageTextField.text == "" {
             sendMessage.isHidden = true
@@ -103,33 +126,34 @@ class MessagesViewController: UIViewController {
         if let uid = Auth.auth().currentUser?.uid {
             if let userID = self.user?.uid {
                
-                let timestamp: NSNumber = NSNumber(value: Int(NSDate().timeIntervalSince1970))
                 let reference = self.ref.child("messages")
                 let childRef = reference.childByAutoId()
                 let values = ["Text": messageTextField.text!,"Hour": hourMessage!, "Date": dateMessage!, "fromID": uid, "receiverID": userID]
                 childRef.updateChildValues(values)
+                
+                messageTextField.text = ""
+                messageTextField.resignFirstResponder()
             }
             loadData()
         }
     }
     func loadData(){
-        //self.chatMessages.removeAll()
+        self.chatMessages.removeAll()
         self.userArray.removeAll()
         self.ref = Database.database().reference()
-        if let uid = Auth.auth().currentUser?.uid {
+        if (Auth.auth().currentUser?.uid) != nil {
                 let reference = self.ref.child("messages")
                 reference.observe(.childAdded) { (snapshot) in
                     
                     if let users = snapshot.value as? [String: Any] {
-                        for(_, value) in users {
+                        for(_, _) in users {
                     
-                            var userToshow = userMessage()
                             self.userArray = users
                     }
-                        
-                        self.loadMessage()
                 }
+                    self.loadMessage()
             }
+           
         }
     }
     
@@ -137,7 +161,6 @@ class MessagesViewController: UIViewController {
         
         let text2 = self.userArray["Text"]as? String
         let idfrom = self.userArray["fromID"]as? String
-        print(text2, idfrom)
         
         if let uid = Auth.auth().currentUser?.uid{
             if let userID = self.user?.uid{
@@ -148,8 +171,9 @@ class MessagesViewController: UIViewController {
                     self.chatMessages.append(ChatMessage(text: text2!, isIncoming: true))
                 }
             }
-            self.messageTableView.reloadData()
         }
+        self.messageTableView.reloadData()
+        moveToLastComment()
     }
 }
 extension MessagesViewController: UITableViewDelegate{
