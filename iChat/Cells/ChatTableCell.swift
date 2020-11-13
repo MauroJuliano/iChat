@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class ChatTableCell: UITableViewCell {
     
     @IBOutlet var nameLabel: UILabel!
@@ -24,10 +24,15 @@ class ChatTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setup(user: User){
-        userImageView.image = UIImage(named: user.image)
+    func setup(user: ChatActivate){
+        
+        let url = URL(string: user.image)
+        //userImageView.kf.indicatorType = .activity
+        userImageView.kf.setImage(with: url)
+        
+        //userImageView.image = UIImage(named: "freiya")
         nameLabel.text = user.name
-        lastMessageLabel.text = user.lastMessage
+        lastMessageLabel.text = user.text
         
         roundedView.backgroundColor = UIColor(patternImage: UIImage(named: "nuvens2")!)
     }

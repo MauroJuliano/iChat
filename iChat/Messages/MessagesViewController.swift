@@ -124,6 +124,7 @@ class MessagesViewController: UIViewController {
     func handleSend() {
         self.ref = Database.database().reference()
         if let uid = Auth.auth().currentUser?.uid {
+            
             if let userID = self.user?.uid {
                
                 let reference = self.ref.child("messages")
@@ -131,8 +132,26 @@ class MessagesViewController: UIViewController {
                 let values = ["Text": messageTextField.text!,"Hour": hourMessage!, "Date": dateMessage!, "fromID": uid, "receiverID": userID]
                 childRef.updateChildValues(values)
                 
+                let lastMessage = messageTextField.text!
                 messageTextField.text = ""
                 messageTextField.resignFirstResponder()
+                chatActive(lastmessage: lastMessage)
+            }
+            //loadData()
+           
+        }
+    }
+    func chatActive(lastmessage: String){
+        self.ref = Database.database().reference()
+        if let uid = Auth.auth().currentUser?.uid {
+            if let userID = self.user?.uid {
+               
+                let reference = self.ref.child("chatactivate")
+                    .child(uid)
+                    .child(userID)
+                
+                let values = ["Text": lastmessage, "fromID": uid, "receiverID": userID, "Name": user!.name, "image": user!.image]
+                reference.updateChildValues(values)
             }
             loadData()
         }
@@ -190,6 +209,15 @@ extension MessagesViewController: UITableViewDataSource{
         let chatMessage = chatMessages[indexPath.row]
     
         cell.chatMessage = chatMessage
+        
+        let totalRow =
+                  tableView.numberOfRows(inSection: indexPath.section)
+              if(indexPath.row == totalRow - 1)
+              {
+                print("lastcell")
+                print(cell.messageLabel.text!)
+              }
+        
         return cell
     }
     

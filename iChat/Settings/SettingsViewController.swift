@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
@@ -56,6 +57,7 @@ class SettingsViewController: UIViewController {
                             //pass data to outlets
                             let url = URL(string: userToshow.image)
                             self.userImage.kf.setImage(with: url)
+                            
                             self.usernameLabel.text = userToshow.name
                             self.emailLabel.text = userToshow.email
                         }

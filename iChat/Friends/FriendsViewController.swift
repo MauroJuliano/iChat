@@ -91,6 +91,7 @@ class FriendsViewController: UIViewController {
                             userToshow.uid = userId
                             
                             self.userArray.append(userToshow)
+                            print(value)
                         }
                     }
                 }

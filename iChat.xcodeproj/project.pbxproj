@@ -37,6 +37,7 @@
 		4C6CCA992558C4B4002DC0F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C6CCA982558C4B4002DC0F4 /* GoogleService-Info.plist */; };
 		4C800BC82558BF6600957F0F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C800BC72558BF6600957F0F /* RegisterViewController.swift */; };
 		4C800BD02558BF7700957F0F /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C800BCF2558BF7700957F0F /* Register.storyboard */; };
+		4CA57E40255E515400E65DAE /* ChatActivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA57E3F255E515400E65DAE /* ChatActivate.swift */; };
 		4CF4A0732558D78B00ACBFF2 /* editTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4A0722558D78B00ACBFF2 /* editTextField.swift */; };
 		75590F6E4E2D4C4AF575D39E /* Pods_iChat_iChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6373983CAE4EF2ACB1731C1 /* Pods_iChat_iChatUITests.framework */; };
 		ADF851C9AE6326E185E80F0C /* Pods_iChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 611BE242EAE53043D262F94B /* Pods_iChatTests.framework */; };
@@ -99,6 +100,7 @@
 		4C6CCA982558C4B4002DC0F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C800BC72558BF6600957F0F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4C800BCF2558BF7700957F0F /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		4CA57E3F255E515400E65DAE /* ChatActivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatActivate.swift; sourceTree = "<group>"; };
 		4CF4A0722558D78B00ACBFF2 /* editTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editTextField.swift; sourceTree = "<group>"; };
 		512F1D1E8BAEF60916C98185 /* Pods-iChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChatTests.debug.xcconfig"; path = "Target Support Files/Pods-iChatTests/Pods-iChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		55763FC2C892CBF6C15176E0 /* Pods-iChat-iChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat-iChatUITests.release.xcconfig"; path = "Target Support Files/Pods-iChat-iChatUITests/Pods-iChat-iChatUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				4C0E247825586C8A00EE12F5 /* User.swift */,
 				4C088C27255B95C0001CF008 /* Message.swift */,
+				4CA57E3F255E515400E65DAE /* ChatActivate.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				4C0E24A025587FBC00EE12F5 /* MessagesViewController.swift in Sources */,
 				4C0E249A2558763E00EE12F5 /* SettingsTableViewCell.swift in Sources */,
 				4C800BC82558BF6600957F0F /* RegisterViewController.swift in Sources */,
+				4CA57E40255E515400E65DAE /* ChatActivate.swift in Sources */,
 				4C0E247925586C8A00EE12F5 /* User.swift in Sources */,
 				4C1B42B325584D6A006F2482 /* SceneDelegate.swift in Sources */,
 				4CF4A0732558D78B00ACBFF2 /* editTextField.swift in Sources */,
